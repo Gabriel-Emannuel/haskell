@@ -8,11 +8,7 @@ insert x (Node y leftNode rightNode)
     | otherwise  = Node y leftNode (insert x rightNode)
 
 isIn :: (Ord a) => a -> BST a -> Bool
-isIn x Empty = False
-isIn x (Node y leftNode rightNode) 
-    | x == y    = True
-    | x > y     = isIn x leftNode
-    | otherwise = isIn x rightNode
+isIn x bst = searchNode x bst /= Empty
 
 searchNode :: (Ord a) => a -> BST a -> BST a
 searchNode _ Empty = Empty

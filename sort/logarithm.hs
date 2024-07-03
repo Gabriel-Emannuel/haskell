@@ -16,5 +16,3 @@ merge (x:xs) (y:ys) =
 quickSort :: (Ord a) => [a] -> [a]
 quickSort [] = []
 quickSort (x:xs) = (quickSort . filter ( < x)) xs ++ [x] ++ (quickSort . filter ( >= x)) xs 
-
-data BST a = Empty | Node a (BST a) (BST a) deriving (Show, Eq)
